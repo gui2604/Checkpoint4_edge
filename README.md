@@ -17,3 +17,5 @@ Checkpoint 4 de Edge Computing, para IoT, demonstrando o funcionamento dos senso
 <img src="https://github.com/gui2604/Checkpoint4_edge/assets/128194162/d421f4f5-f496-4672-bc37-3dd18493c977">
 <h2>Dashboard</h2>
 <img src="https://github.com/gui2604/Checkpoint4_edge/assets/128194162/bebc09c0-bf9e-454f-bebf-951414b5ce22">
+<h2>Broker HiveMQ</h2>
+<img src="https://github.com/gui2604/Checkpoint4_edge/assets/128194162/17efef75-300d-46d7-9d31-d04dfad20c7d">
