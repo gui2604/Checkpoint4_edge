@@ -12,3 +12,6 @@ Checkpoint 4 de Edge Computing, para IoT, demonstrando o funcionamento dos senso
   <li>- 7 cabos macho-macho (utilizados nos sensores ldr, dht11 e na conexão da protoboard com o arduíno)</li>
   <li>- 4 cabos macho-fêmea (utilizados no sensor ultrassônico)</li>
 </ul>
+
+<h2>Imagem do fluxo IoT em Node-Red</h2>
+<img src="https://github.com/gui2604/Checkpoint4_edge/assets/128194162/d421f4f5-f496-4672-bc37-3dd18493c977">
