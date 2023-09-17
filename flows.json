@@ -1,0 +1,466 @@
+[
+    {
+        "id": "66fea9483bcc3aa4",
+        "type": "tab",
+        "label": "Checkpoint 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "302f4ec606f6bb39",
+        "type": "junction",
+        "z": "66fea9483bcc3aa4",
+        "x": 660,
+        "y": 200,
+        "wires": [
+            [
+                "dcfedb8e523d7c19"
+            ]
+        ]
+    },
+    {
+        "id": "c88aa7719f40a32b",
+        "type": "debug",
+        "z": "66fea9483bcc3aa4",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "126ef01e7474797d",
+        "type": "change",
+        "z": "66fea9483bcc3aa4",
+        "name": "Luz",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.ldr",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "607a0b939c83838a",
+                "d795deb397d6e455"
+            ]
+        ]
+    },
+    {
+        "id": "571e613f206e041c",
+        "type": "change",
+        "z": "66fea9483bcc3aa4",
+        "name": "Temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 200,
+        "wires": [
+            [
+                "f8c17d2082edb37e",
+                "302f4ec606f6bb39"
+            ]
+        ]
+    },
+    {
+        "id": "bd95b42b0562a862",
+        "type": "change",
+        "z": "66fea9483bcc3aa4",
+        "name": "Umidade",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "f8c17d2082edb37e",
+                "4187a21be71efae0"
+            ]
+        ]
+    },
+    {
+        "id": "aa386de2c3022ff4",
+        "type": "change",
+        "z": "66fea9483bcc3aa4",
+        "name": "Distância",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.distance",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 280,
+        "wires": [
+            [
+                "f3437a2e411fa4e2",
+                "a8011f88e61a66b9"
+            ]
+        ]
+    },
+    {
+        "id": "e3a9b782a45bb629",
+        "type": "serial in",
+        "z": "66fea9483bcc3aa4",
+        "name": "COM3",
+        "serial": "fb7cabd562e765b4",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "550f0560b597cdcf"
+            ]
+        ]
+    },
+    {
+        "id": "550f0560b597cdcf",
+        "type": "json",
+        "z": "66fea9483bcc3aa4",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "fb802fe773b9f220",
+                "126ef01e7474797d",
+                "571e613f206e041c",
+                "bd95b42b0562a862",
+                "aa386de2c3022ff4"
+            ]
+        ]
+    },
+    {
+        "id": "607a0b939c83838a",
+        "type": "mqtt out",
+        "z": "66fea9483bcc3aa4",
+        "name": "LDR",
+        "topic": "fiap/iot/1ESR/SMARTRASH/ldr",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "769b193d39217d0e",
+        "x": 710,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f8c17d2082edb37e",
+        "type": "mqtt out",
+        "z": "66fea9483bcc3aa4",
+        "name": "DHT11",
+        "topic": "fiap/iot/1ESR/SMARTRASH/dht11",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "769b193d39217d0e",
+        "x": 710,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f3437a2e411fa4e2",
+        "type": "mqtt out",
+        "z": "66fea9483bcc3aa4",
+        "name": "Ultrassônico",
+        "topic": "fiap/iot/1ESR/SMARTRASH/ultrassonic",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "769b193d39217d0e",
+        "x": 730,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4187a21be71efae0",
+        "type": "ui_chart",
+        "z": "66fea9483bcc3aa4",
+        "name": "",
+        "group": "272a0f1d7b5106f5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Umidade",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 880,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a8011f88e61a66b9",
+        "type": "ui_chart",
+        "z": "66fea9483bcc3aa4",
+        "name": "",
+        "group": "272a0f1d7b5106f5",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Distância",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 880,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fb802fe773b9f220",
+        "type": "function",
+        "z": "66fea9483bcc3aa4",
+        "name": "function 5",
+        "func": "msg.payload = {\n    \"Temperatura\": msg.payload.temperature,\n    \"Umidade\": msg.payload.humidity,\n    \"Intensidade Luminosa\": msg.payload.ldr,\n    \"Distância\": msg.payload.distance\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 120,
+        "wires": [
+            [
+                "c88aa7719f40a32b"
+            ]
+        ]
+    },
+    {
+        "id": "dcfedb8e523d7c19",
+        "type": "ui_gauge",
+        "z": "66fea9483bcc3aa4",
+        "name": "",
+        "group": "272a0f1d7b5106f5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 890,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d795deb397d6e455",
+        "type": "ui_gauge",
+        "z": "66fea9483bcc3aa4",
+        "name": "",
+        "group": "272a0f1d7b5106f5",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Luz",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 870,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "fb7cabd562e765b4",
+        "type": "serial-port",
+        "serialport": "COM3",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "769b193d39217d0e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt-dashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "272a0f1d7b5106f5",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "c34ed28b6a5d2686",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c34ed28b6a5d2686",
+        "type": "ui_tab",
+        "name": "SMARTRASH",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
